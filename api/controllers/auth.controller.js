@@ -1,7 +1,7 @@
 import User from "../model/user.model.js";
-import bcrypt from "bcryptjs";
+import bcryptjs from "bcryptjs";
 import { errorHandler } from "../utils/error.util.js";
-import { Jwt } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 
 export const signup = async (req, res, next) => {
   const { username, email, password } = req.body;
@@ -17,7 +17,7 @@ export const signup = async (req, res, next) => {
     next(errorHandler(400, "All fields are required"));
   }
 
-  const hashedPassword = bcrypt.hashSync(password, 10);
+  const hashedPassword = bcryptjs.hashSync(password, 10);
 
   const newUser = new User({
     username,
@@ -33,7 +33,7 @@ export const signup = async (req, res, next) => {
   }
 };
 
-export const signin = async (req, res) => {
+export const signin = async (req, res, next) => {
   const { email, password } = req.body;
 
   if (!email || !password || email === "" || password === "") {
@@ -45,14 +45,14 @@ export const signin = async (req, res) => {
     if (!validUser) {
       return next(errorHandler(404, "User not found"));
     }
-
     const validPassword = bcryptjs.compareSync(password, validUser.password);
-
     if (!validPassword) {
-      return next(errorHandler(400, "Invalid Password"));
+      return next(errorHandler(400, "Invalid password"));
     }
-
-    const token = jwt.sign({ id: validUser._id }, process.env.JWT_SECRET);
+    const token = jwt.sign(
+      { id: validUser._id, isAdmin: validUser.isAdmin },
+      process.env.JWT_SECRET
+    );
 
     const { password: pass, ...rest } = validUser._doc;
 
