@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
-import { Alert, Button, Modal, TextInput } from "flowbite-react";
+import { Alert, Button, Modal, ModalBody, TextInput } from "flowbite-react";
 import {
   getDownloadURL,
   getStorage,
@@ -34,8 +34,6 @@ export default function DashProfile() {
   const [updateUserError, setUpdateUserError] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({});
-
-  // console.log(imageFileUploadProgress, imageFileUploadError);
   const filePickerRef = useRef();
   const dispatch = useDispatch();
   const handleImageChange = (e) => {
@@ -60,7 +58,6 @@ export default function DashProfile() {
     //     }
     //   }
     // }
-
     setImageFileUploading(true);
     setImageFileUploadError(null);
     const storage = getStorage(app);
@@ -121,7 +118,6 @@ export default function DashProfile() {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
-
       if (!res.ok) {
         dispatch(updateFailure(data.message));
         setUpdateUserError(data.message);
@@ -142,7 +138,6 @@ export default function DashProfile() {
       const res = await fetch(`/api/user/delete/${currentUser._id}`, {
         method: "DELETE",
       });
-
       const data = await res.json();
       if (!res.ok) {
         dispatch(deleteUserFailure(data.message));
@@ -160,7 +155,6 @@ export default function DashProfile() {
         method: "POST",
       });
       const data = await res.json();
-
       if (!res.ok) {
         console.log(data.message);
       } else {
@@ -170,7 +164,6 @@ export default function DashProfile() {
       console.log(error.message);
     }
   };
-
   return (
     <div className="max-w-lg mx-auto p-3 w-full">
       <h1 className="my-7 text-center font-semibold text-3xl">Profile</h1>
@@ -181,7 +174,7 @@ export default function DashProfile() {
           onChange={handleImageChange}
           ref={filePickerRef}
           hidden
-        ></input>
+        />
         <div
           className="relative w-32 h-32 self-center cursor-pointer shadow-md overflow-hidden rounded-full"
           onClick={() => filePickerRef.current.click()}
@@ -215,7 +208,7 @@ export default function DashProfile() {
               imageFileUploadProgress < 100 &&
               "opacity-60"
             }`}
-          ></img>
+          />
         </div>
         {imageFileUploadError && (
           <Alert color="failure">{imageFileUploadError}</Alert>
@@ -252,7 +245,7 @@ export default function DashProfile() {
           <Link to={"/create-post"}>
             <Button
               type="button"
-              gradientDuoTone={purpleToPink}
+              gradientDuoTone="purpleToPink"
               className="w-full"
             >
               Create a post
