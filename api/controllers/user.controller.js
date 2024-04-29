@@ -8,13 +8,11 @@ export const test = (req, res) => {
 
 export const updateUser = async (req, res, next) => {
   if (req.user.id !== req.params.userId) {
-    return next(errorHandler(403, "Not allowed to update this user"));
+    return next(errorHandler(403, "You are not allowed to update this user"));
   }
   if (req.body.password) {
     if (req.body.password.length < 6) {
-      return next(
-        errorHandler(400, "Password is too short at least 6 characters")
-      );
+      return next(errorHandler(400, "Password is too short must be at least 6 characters"));
     }
     req.body.password = bcryptjs.hashSync(req.body.password, 10);
   }
@@ -49,7 +47,6 @@ export const updateUser = async (req, res, next) => {
       },
       { new: true }
     );
-
     const { password, ...rest } = updatedUser._doc;
     res.status(200).json(rest);
   } catch (error) {
@@ -61,7 +58,6 @@ export const deleteUser = async (req, res, next) => {
   if (!req.user.isAdmin && req.user.id !== req.params.userId) {
     return next(errorHandler(403, "You are not allowed to delete this user."));
   }
-
   try {
     await User.findByIdAndDelete(req.params.userId);
     res.status(200).json("User deleted successfully");
@@ -118,5 +114,20 @@ export const getUsers = async (req, res, next) => {
       totalUsers,
       lastMonthUsers,
     });
-  } catch (error) {}
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const getUser = async (req, res, next) => {
+  try {
+    const user = await User.findById(req.params.userId);
+    if (!user) {
+      return next(errorHandler(404, "User not found"));
+    }
+    const { password, ...rest } = user._doc;
+    res.status(200).json(rest);
+  } catch (error) {
+    next(error);
+  }
 };
