@@ -7,7 +7,7 @@ export default function FooterComp() {
   return (
     <Footer className="border border-t-8 border-teal-500" container>
       <div className="w-full max-w-7xl mx-auto">
-        <div className="grid w-full justify-between sm:flex md:grif-cols-1">
+        <div className="grid w-full justify-between sm:flex md:grid-cols-1">
           <div className="mt-5">
             <Link
               to="/"
@@ -23,13 +23,13 @@ export default function FooterComp() {
             <div>
               <Footer.Title title="About"></Footer.Title>
               <Footer.LinkGroup col>
-                <Footer.Link
+                {/* <Footer.Link
                   href="https://knowledgable-info.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Knowledgable Info
-                </Footer.Link>
+                </Footer.Link> */}
                 <Footer.Link
                   href="/about"
                   target="_blank"
@@ -43,19 +43,33 @@ export default function FooterComp() {
               <Footer.Title title="FOLLOW US"></Footer.Title>
               <Footer.LinkGroup col>
                 <Footer.Link
+                  href="https://github.com/WreckingCat"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Vishakha's GitHub
+                </Footer.Link>
+                <Footer.Link
+                  href="https://github.com/shubhsingh1515"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Shubham's GitHub
+                </Footer.Link>
+                <Footer.Link
                   href="https://github.com/anubhav7747"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  GitHub
+                  Anubhav's GitHub
                 </Footer.Link>
-                <Footer.Link
+                {/* <Footer.Link
                   href="https://anubhavtiwari-portfolio.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Portfolio
-                </Footer.Link>
+                </Footer.Link> */}
               </Footer.LinkGroup>
             </div>
             <div>
