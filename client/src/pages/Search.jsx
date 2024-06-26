@@ -123,7 +123,7 @@ export default function Search() {
               <option value="asc">Oldest</option>
             </Select>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 w-64">
             <label className="font-semibold">Category:</label>
             <Select
               onChange={handleChange}
@@ -132,6 +132,7 @@ export default function Search() {
             >
               <option value="uncategorized">Uncategorized</option>
               <option value="programming">Programming</option>
+              <option value="web-development">Web Development</option>
               <option value="javascript">JavaScript</option>
               <option value="reactjs">React.js</option>
               <option value="nextjs">Next.js</option>

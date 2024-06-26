@@ -17,10 +17,9 @@ export default function Home() {
   return (
     <div>
       <div className="flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold">Welcome to our Blog</h1>
+        <h1 className="text-3xl font-bold">Welcome to our Blog!</h1>
         <p className="text-gray-500 text-xs sm:text-sm">
-          Here, you will find a variety of articles and tutorials on topics such
-          as web development, books and programming languages.
+        This site offers a wide range of tutorials and articles on subjects like programming, web development, javascript, books, travel, and cuisine.
         </p>
         <Link
           to="/search"
