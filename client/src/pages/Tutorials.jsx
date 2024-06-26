@@ -5,7 +5,7 @@ export default function Tutorials() {
   return (
     <div className="p-7">
       <h1 className="font-bold text-4xl">Tutorials</h1>
-      <div className="px-10 py-7 font-serif flex flex-row grid-cols-3 gap-28">
+      <div className="px-10 py-7 font-serif flex flex-col sm:flex-row grid-cols-3 gap-12 sm:gap-28">
         <div>
           <Link
             to="https://knowledgeable-info.netlify.app/"
