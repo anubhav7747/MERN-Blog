@@ -167,7 +167,42 @@ export default function Tutorials() {
             </ul>
           </div>
         </div>
-
+        <div>
+          <Link
+            to="https://knowledgeable-info.netlify.app/"
+            className="text-orange-300 text-2xl hover:underline"
+          >
+            HTML
+          </Link>
+          <div className="px-2 py-1">
+            <ul>
+              <Link to="#" target="_blank">
+                Learn{" "}
+                <span className="text-xl tracking-wide">
+                  Interview Preparation
+                </span>
+              </Link>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <Link
+            to="https://knowledgeable-info.netlify.app/"
+            className="text-orange-300 text-2xl hover:underline"
+          >
+            CSS
+          </Link>
+          <div className="px-2 py-1">
+            <ul>
+              <Link to="#" target="_blank">
+                Learn{" "}
+                <span className="text-xl tracking-wide">
+                  Interview Preparation
+                </span>
+              </Link>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );
