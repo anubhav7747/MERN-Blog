@@ -16,7 +16,17 @@ import PostPage from "./pages/PostPage";
 import ScrollToTop from "./components/ScrollToTop";
 import Search from "./pages/Search";
 import Tutorials from "./pages/Tutorials";
-import InterviewPreparation from "./HTMLSection/InterviewPreparation";
+import HtmlIntroduction from "./HTMLSection/Introduction";
+import HtmlBasics from "./HTMLSection/Basics";
+import HtmlElements from "./HTMLSection/Elements";
+import HtmlAttributes from "./HTMLSection/Attributes";
+import HtmlInterviewPreparation from "./HTMLSection/InterviewPreparation";
+import CssIntroduction from "./CSSSection/Introduction";
+import CssSelectors from "./CSSSection/Selectors";
+import CssHowTo from "./CSSSection/HowTo";
+import CssBorders from "./CSSSection/Borders";
+import CssInterviewPreparation from "./CSSSection/InterviewPreparation";
+
 
 export default function App() {
   return (
@@ -40,7 +50,17 @@ export default function App() {
         <Route path="/post/:postSlug" element={<PostPage />} />
         <Route path="/tutorials" element={<Tutorials />} />
         {/* html section */}
-        <Route path="/html/interviewPreparation" element={<InterviewPreparation />} />
+        <Route path="/html/introduction" element={<HtmlIntroduction />} />
+        <Route path="/html/basics" element={<HtmlBasics />} />
+        <Route path="/html/elements" element={<HtmlElements />} />
+        <Route path="/html/attributes" element={<HtmlAttributes />} />
+        <Route path="/html/interviewPreparation" element={<HtmlInterviewPreparation />} />
+        {/* css section */}
+        <Route path="/css/introduction" element={<CssIntroduction />} />
+        <Route path="/css/borders" element={<CssBorders />} />
+        <Route path="/css/selectors" element={<CssSelectors />} />
+        <Route path="/css/howto" element={<CssHowTo />} />
+        <Route path="/css/interviewPreparation" element={<CssInterviewPreparation />} />
       </Routes>
       <Footer />
     </BrowserRouter>
