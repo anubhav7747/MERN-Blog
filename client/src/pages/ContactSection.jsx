@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { toggleTheme } from "../redux/theme/themeSlice";
 import { Button } from "flowbite-react";
 
-export default function Contact() {
+const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -145,9 +145,19 @@ export default function Contact() {
               required
             ></textarea>
           </div>
-          <Button type="submit" className="" outline gradientDuoTone="purpleToBlue">Send</Button>
+          {/* <button
+            type="submit"
+            className={`py-2 px-4 bg-cyan-500 text-white font-semibold rounded-lg shadow-md hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-opacity-75`}
+          >
+            Send Message
+          </button> */}
+          <Button outline type="submit" gradientDuoTone="purpleToBlue">
+            Send
+          </Button>
         </form>
       </div>
     </div>
   );
-}
+};
+
+export default ContactSection;

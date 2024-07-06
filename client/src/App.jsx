@@ -16,6 +16,8 @@ import PostPage from "./pages/PostPage";
 import ScrollToTop from "./components/ScrollToTop";
 import Search from "./pages/Search";
 import Tutorials from "./pages/Tutorials";
+import CodeEditor from "./pages/CodeEditor";
+import ContactSection from "./pages/ContactSection";
 import HtmlIntroduction from "./HTMLSection/Introduction";
 import HtmlBasics from "./HTMLSection/Basics";
 import HtmlElements from "./HTMLSection/Elements";
@@ -26,8 +28,6 @@ import CssSelectors from "./CSSSection/Selectors";
 import CssHowTo from "./CSSSection/HowTo";
 import CssBorders from "./CSSSection/Borders";
 import CssInterviewPreparation from "./CSSSection/InterviewPreparation";
-import CodeEditor from "./pages/CodeEditor";
-import Contact from "./pages/Contact";
 
 
 export default function App() {
@@ -52,7 +52,7 @@ export default function App() {
         <Route path="/post/:postSlug" element={<PostPage />} />
         <Route path="/tutorials" element={<Tutorials />} />
         <Route path="/code-editor" element={<CodeEditor />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/ContactSection" element={<ContactSection />} />
         {/* html section */}
         <Route path="/html/introduction" element={<HtmlIntroduction />} />
         <Route path="/html/basics" element={<HtmlBasics />} />
