@@ -143,6 +143,9 @@ export default function Header() {
         <NavbarLink active={path === "/ContactSection"} as={"div"}>
           <Link to="/ContactSection">Contact Us</Link>
         </NavbarLink>
+        {/* <NavbarLink active={path === "/ContactSectionRestAPI"} as={"div"}>
+          <Link to="/ContactSectionRestAPI">Contact Us</Link>
+        </NavbarLink> */}
       </NavbarCollapse>
     </Navbar>
   );

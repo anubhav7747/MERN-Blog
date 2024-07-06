@@ -28,6 +28,7 @@ import CssSelectors from "./CSSSection/Selectors";
 import CssHowTo from "./CSSSection/HowTo";
 import CssBorders from "./CSSSection/Borders";
 import CssInterviewPreparation from "./CSSSection/InterviewPreparation";
+// import ContactSectionRestAPI from "./pages/ContactSectionRestAPI";
 
 
 export default function App() {
@@ -53,6 +54,7 @@ export default function App() {
         <Route path="/tutorials" element={<Tutorials />} />
         <Route path="/code-editor" element={<CodeEditor />} />
         <Route path="/ContactSection" element={<ContactSection />} />
+        {/* <Route path="/ContactSectionRestAPI" element={<ContactSectionRestAPI />} /> */}
         {/* html section */}
         <Route path="/html/introduction" element={<HtmlIntroduction />} />
         <Route path="/html/basics" element={<HtmlBasics />} />
