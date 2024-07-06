@@ -26,6 +26,8 @@ import CssSelectors from "./CSSSection/Selectors";
 import CssHowTo from "./CSSSection/HowTo";
 import CssBorders from "./CSSSection/Borders";
 import CssInterviewPreparation from "./CSSSection/InterviewPreparation";
+import CodeEditor from "./pages/CodeEditor";
+import Contact from "./pages/Contact";
 
 
 export default function App() {
@@ -49,6 +51,8 @@ export default function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/post/:postSlug" element={<PostPage />} />
         <Route path="/tutorials" element={<Tutorials />} />
+        <Route path="/code-editor" element={<CodeEditor />} />
+        <Route path="/contact" element={<Contact />} />
         {/* html section */}
         <Route path="/html/introduction" element={<HtmlIntroduction />} />
         <Route path="/html/basics" element={<HtmlBasics />} />
