@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@codeium/react-code-editor": "^1.0.12",
+    "@emailjs/browser": "^4.3.3",
     "@monaco-editor/react": "^4.6.0",
     "@reduxjs/toolkit": "^2.2.1",
     "axios": "^1.7.2",
