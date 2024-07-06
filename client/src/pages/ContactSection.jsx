@@ -321,6 +321,88 @@
 
 // export default ContactSection;
 
+
+
+// sddddddddd
+// import React, { useState } from "react";
+// import emailjs from "@emailjs/browser";
+// import { Button } from "flowbite-react";
+
+// const ContactSection = () => {
+//   const [name, setName] = useState("");
+//   const [email, setEmail] = useState("");
+//   const [message, setMessage] = useState("");
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+
+//     // emailjs
+//     const serviceId = "service_w8mm6jg";
+//     const templateId = "template_x1twg1f";
+//     const publicKey = "FRvXaLaWUlbcdwzXe";
+
+//     // create a new object that contains dynamic template params
+//     const templateParams = {
+//       from_name: name,
+//       from_email: email,
+//       to_name: "Anubhav Tiwari",
+//       message: message,
+//     };
+
+//     // send the email
+//     emailjs
+//       .send(serviceId, templateId, templateParams, publicKey)
+//       .then((response) => {
+//         console.log("Email sent successfully!", response);
+//         setName("");
+//         setEmail("");
+//         setMessage("");
+//       })
+//       .catch((error) => console.error("Error sending email:", error));
+//   };
+
+//   return (
+//     <div className="">
+//       <form onSubmit={handleSubmit} className="emailForm flex flex-col p-10">
+//         <input
+//           type="text"
+//           placeholder="Your Name"
+//           value={name}
+//           onChange={(e) => setName(e.target.value)}
+//           className="w-4/5 mx-auto mt-5"
+//         />
+//         <input
+//           type="email"
+//           placeholder="Your Email"
+//           value={email}
+//           onChange={(e) => setEmail(e.target.value)}
+//           className="w-4/5 mx-auto mt-5"
+//         />
+//         <textarea
+//           cols="30"
+//           rows="10"
+//           value={message}
+//           onChange={(e) => setMessage(e.target.value)}
+//           className="w-4/5 mx-auto mt-5"
+//           placeholder="Your Message"
+//         ></textarea>
+//         {/* <button type="submit">Send Email</button> */}
+//         <Button
+//           type="submit"
+//           outline
+//           gradientDuoTone="purpleToBlue"
+//           className="w-48 mx-auto my-5"
+//         >
+//           Send Email
+//         </Button>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default ContactSection;
+
+
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Button } from "flowbite-react";
@@ -333,7 +415,7 @@ const ContactSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // emailjs
+    // emailjs configuration
     const serviceId = "service_w8mm6jg";
     const templateId = "template_x1twg1f";
     const publicKey = "FRvXaLaWUlbcdwzXe";
@@ -383,7 +465,6 @@ const ContactSection = () => {
           className="w-4/5 mx-auto mt-5"
           placeholder="Your Message"
         ></textarea>
-        {/* <button type="submit">Send Email</button> */}
         <Button
           type="submit"
           outline
@@ -398,11 +479,3 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
-
-// import React from 'react'
-
-// export default function ContactSection() {
-//   return (
-//     <div>ContactSection</div>
-//   )
-// }
